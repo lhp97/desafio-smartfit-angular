@@ -1,3 +1,11 @@
+:root {
+  --dark-grey: #333333;
+  --light-yellow: #808080;
+  --yellow: #FFB612;
+  --red: #dc0a17;
+  --green: #2fc022;
+}
+
 @font-face {
   font-family: 'Gotham';
   src: url('assets/fonts/gotham/gotham-light.woff2') format('truetype');
