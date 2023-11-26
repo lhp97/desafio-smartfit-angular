@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HeaderModule } from './components/header/header.module';
+import { FormsModule } from './components/forms/forms.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { HeaderModule } from './components/header/header.module';
   ],
   imports: [
     BrowserModule,
-    HeaderModule
+    HeaderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
