@@ -12,7 +12,7 @@ import { FormsModule } from './components/forms/forms.module';
   imports: [
     BrowserModule,
     HeaderModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
