@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { UnitService } from 'src/app/services/unit.service';
 
 @Component({
   selector: 'app-forms',
@@ -11,8 +12,9 @@ export class FormsComponent implements OnInit {
   results = []
   formGroup!: FormGroup
 
-  constructor(private formBuilder: FormBuilder) {
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private unitService: UnitService) {
   }
 
   ngOnInit() {
@@ -28,6 +30,7 @@ export class FormsComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formGroup.value);
+    this.unitService.getAllUnits().subscribe(data => console.log(data));
   }
 
   onClean() {
