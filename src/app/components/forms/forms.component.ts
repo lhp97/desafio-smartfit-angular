@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from 'src/app/interfaces/location.interface';
 import { UnitService } from 'src/app/services/unit.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { UnitService } from 'src/app/services/unit.service';
 })
 export class FormsComponent implements OnInit {
 
-  results = []
+  results: Location[] = []
+  filtredResults: Location[] = []
   formGroup!: FormGroup
 
   constructor(
@@ -19,18 +21,30 @@ export class FormsComponent implements OnInit {
 
   ngOnInit() {
     this.createForm()
+    this.inicializaDados();
+
+  }
+
+  private inicializaDados() {
+    this.unitService.getAllUnits().subscribe(data => {
+      this.results = data.locations;
+      this.filtredResults = data.locations
+    });
   }
 
   createForm() {
     this.formGroup = this.formBuilder.group({
       hour: '',
-      showClosed: false
+      showClosed: true
     })
   }
 
   onSubmit() {
-    console.log(this.formGroup.value);
-    this.unitService.getAllUnits().subscribe(data => console.log(data));
+    if (!this.formGroup.value.showClosed) {
+      this.filtredResults = this.results.filter(result => result.opened);
+    } else {
+      this.filtredResults = this.results
+    }
   }
 
   onClean() {
