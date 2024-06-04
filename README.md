@@ -12,6 +12,9 @@ O desafio foi proposto pela empresa SmartFit durante um de seus processos seleti
 - HTML / CSS / JS / Typescript
 - Angular 17
 
+## Back end
+- API disponibilizada pela própria empresa.
+
 # Autor
 Luis Henrique do Prado
 (https://www.linkedin.com/in/luis-henrique-do-prado-364389123/)
