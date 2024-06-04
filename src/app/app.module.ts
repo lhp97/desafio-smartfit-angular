@@ -7,12 +7,14 @@ import { HeaderModule } from './components/header/header.module';
 import { FormsModule } from './components/forms/forms.module';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
 import { CardComponent } from './components/card/card.component';
+import { LegendComponent } from './components/legend/legend.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsListComponent,
     CardComponent,
+    LegendComponent,
   ],
   imports: [
     BrowserModule,
